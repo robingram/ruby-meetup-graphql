@@ -25,6 +25,11 @@
   </p>
 
   <p>
+    <%= form.label :author_id %><br>
+    <%= form.collection_select(:author_id, Author.all, :id, :name, prompt: true) %>
+  </p>
+
+  <p>
     <%= form.submit %>
   </p>
 

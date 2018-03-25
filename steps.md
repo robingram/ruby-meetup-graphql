@@ -11,4 +11,8 @@ Also adds `app/graphql/types` and `app/graphql/mutations` with some dummy implem
     }
 
 
+## 2
+
+Add article type.
+
 

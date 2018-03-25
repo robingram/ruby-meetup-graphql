@@ -61,5 +61,31 @@ Add `allArticles` query.
       }
     }
 
+## 4
+
+Add comment type and refrence from article.
+
+[Demo querying a comment]
+
+    query {
+      comment(id: 1) {
+        commenter,
+        body
+      }
+    }
+
+[Demo querying an article with comments]
+
+  query {
+    allArticles {
+      title,
+      comments {
+        commenter,
+        body
+      }
+    }
+  }
+
+
 
 

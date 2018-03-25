@@ -17,4 +17,12 @@ Types::QueryType = GraphQL::ObjectType.define do
       Article.all
     }
   end
+
+  field :comment, Types::CommentType do
+    description "a comment on an article"
+    argument :id, types.Int
+    resolve -> (obj, args, ctx) {
+      Comment.find(args[:id])
+    }
+  end
 end

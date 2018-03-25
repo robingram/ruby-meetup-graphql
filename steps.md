@@ -49,7 +49,17 @@ Add article type.
       }
     }
 
+## 3
 
+Add `allArticles` query.
+
+[Demo querying for all articles]
+
+    query {
+      allArticles {
+        title
+      }
+    }
 
 
 

@@ -10,4 +10,11 @@ Types::QueryType = GraphQL::ObjectType.define do
       Article.find(args[:id])
     }
   end
+
+  field :allArticles, types[Types::ArticleType] do
+    description "an article"
+    resolve ->(obj, args, ctx){
+      Article.all
+    }
+  end
 end

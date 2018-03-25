@@ -86,6 +86,40 @@ Add comment type and refrence from article.
     }
   }
 
+## 5
 
+Add author type linked from article.
+
+[Demo querying an author and all authors]
+
+    query {
+      author(id: 1) {
+        name,
+        email
+      }
+    }
+
+    query {
+      allAuthors {
+        name,
+        email
+      }
+    }
+
+[Demo querying article with comments and author]
+
+    query {
+      allArticles {
+        title,
+        comments {
+          commenter,
+          body
+        },
+        author {
+          name,
+          email
+        }
+      }
+    }
 
 

@@ -25,4 +25,19 @@ Types::QueryType = GraphQL::ObjectType.define do
       Comment.find(args[:id])
     }
   end
+
+  field :author, Types::AuthorType do
+    description "a author"
+    argument :id, types.Int
+    resolve -> (obj, args, ctx) {
+      Author.find(args[:id])
+    }
+  end
+
+  field :allAuthors, types[Types::AuthorType] do
+    description "all authors"
+    resolve ->(obj, args, ctx){
+      Author.all
+    }
+  end
 end

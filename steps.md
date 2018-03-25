@@ -15,4 +15,41 @@ Also adds `app/graphql/types` and `app/graphql/mutations` with some dummy implem
 
 Add article type.
 
+[Demo querying for schema and type details]
+
+    query {
+      __schema {
+        types {
+          name
+          kind
+          description
+          fields {
+            name
+          }
+        }
+      }
+    }
+
+    query {
+      __type(name: "Article") {
+        name
+        kind
+        description
+        fields {
+          name
+        }
+      }
+    }
+
+[Demo querying for an article]
+
+    query {
+      article(id: 2) {
+        title
+      }
+    }
+
+
+
+
 

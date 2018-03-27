@@ -122,4 +122,14 @@ Add author type linked from article.
       }
     }
 
+## 6
+
+Implement a naive search.
+
+    query {
+      articleSearch(query: "tincidunt") {
+        title,
+        text
+      }
+    }
 

@@ -18,6 +18,16 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
+  field :articleSearch, types[Types::ArticleType] do
+    description "search for an article"
+    argument :query, types.String
+    resolve ->(obj, args, ctx){
+      Article
+        .where('title LIKE ?', "%#{args[:query]}%")
+        .or(Article.where('text LIKE ?', "%#{args[:query]}%"))
+    }
+  end
+
   field :comment, Types::CommentType do
     description "a comment on an article"
     argument :id, types.Int

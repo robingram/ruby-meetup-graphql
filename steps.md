@@ -133,3 +133,33 @@ Implement a naive search.
       }
     }
 
+
+## 7
+
+Run a mutation.
+
+mutation {
+  updateArticle(id: 1, title: "My updated title") {
+    title
+    text
+  }
+}
+
+mutation {
+  updateArticle(id: 1, title: "My even more updated title", text: "A very short article") {
+    title
+    text
+  }
+}
+
+Force an error.
+
+mutation {
+  updateArticle(id: 11, title: "My even more updated title", text: "A very short article") {
+    title
+    text
+  }
+}
+
+
+

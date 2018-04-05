@@ -1,17 +1,22 @@
 module Mutations
-  class UpdateArticle < GraphQL::Function
+  class Article < GraphQL::Function
     # define the required input arguments for this mutation
-    argument :id, !types.Int
+    argument :id, types.Int
     argument :title, !types.String
     argument :text, types.String
+    argument :author_id, types.Int
 
     # define what the return type will be
     type Types::ArticleType
 
     # resolve the field, perfoming the mutation and its response
     def call(obj, args, ctx)
-      article = Article.find(args[:id])
-      article.update_attributes(args.to_h)
+      if args.key?(:id)
+        article = ::Article.find(args[:id])
+        article.update_attributes(args.to_h)
+      else
+        article = ::Article.create!(args.to_h)
+      end
       article
     rescue ActiveRecord::RecordNotFound => e
       GraphQL::ExecutionError.new("No Article with ID #{args[:id]} found.")

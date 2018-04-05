@@ -138,28 +138,51 @@ Implement a naive search.
 
 Run a mutation.
 
-mutation {
-  updateArticle(id: 1, title: "My updated title") {
-    title
-    text
-  }
-}
+    mutation {
+      updateArticle(id: 1, title: "My updated title") {
+        title
+        text
+      }
+    }
 
-mutation {
-  updateArticle(id: 1, title: "My even more updated title", text: "A very short article") {
-    title
-    text
-  }
-}
+    mutation {
+      updateArticle(id: 1, title: "My even more updated title", text: "A very short article") {
+        title
+        text
+      }
+    }
 
 Force an error.
 
-mutation {
-  updateArticle(id: 11, title: "My even more updated title", text: "A very short article") {
-    title
-    text
-  }
-}
+    mutation {
+      updateArticle(id: 11, title: "My even more updated title", text: "A very short article") {
+        title
+        text
+      }
+    }
+
+## 8
+
+Allow article creation.
+
+    mutation {
+      article(title: "My new article", text: "GraphQL rocks!!!", author_id: 2) {
+        title
+        text
+      }
+    }
 
 
+## Further Reading
 
+Authentication with Devise:
+https://chunksofco.de/rails-graphql-server-tips-part-1-authentication-bced6cf7ac63
+
+Authentication with JWT:
+https://blog.codeship.com/how-to-implement-a-graphql-api-in-rails/
+
+Authorisation with Pundit
+https://medium.com/@NickPoorman/graphql-ruby-and-authorization-with-pundit-3d8d2102533d
+
+Testing?
+Relay?

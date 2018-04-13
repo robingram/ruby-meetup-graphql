@@ -1,4 +1,5 @@
 class GraphqlController < ApplicationController
+
   def execute
     variables = ensure_hash(params[:variables])
     query = params[:query]
@@ -6,6 +7,7 @@ class GraphqlController < ApplicationController
     context = {
       # Query context goes here, for example:
       # current_user: current_user,
+      current_author: current_author,
     }
     result = MeetupGraphqlSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result

@@ -2,11 +2,11 @@ Devise::TokenAuthenticatable.setup do |config|
   # enables the expiration of a token after a specified amount of time,
   # requires an additional field on the model: `authentication_token_created_at`
   # defaults to nil
-  config.token_expires_in = 1.day
+  config.token_expires_in = 5.days
 
   # set the authentication key name used by this module,
   # defaults to :auth_token
-  config.token_authentication_key = :authentication_token
+  # config.token_authentication_key = :authentication_token
 
   # enable reset of the authentication token before the model is saved,
   # defaults to false

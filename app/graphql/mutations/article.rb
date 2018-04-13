@@ -11,6 +11,10 @@ module Mutations
 
     # resolve the field, perfoming the mutation and its response
     def call(obj, args, ctx)
+      if ctx[:current_author].blank?
+        raise GraphQL::ExecutionError.new('Author not signed in')
+      end
+
       if args.key?(:id)
         article = ::Article.find(args[:id])
         article.update_attributes(args.to_h)

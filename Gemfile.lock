@@ -77,6 +77,10 @@ GEM
       warden (~> 1.2.3)
     devise-token_authenticatable (1.0.1)
       devise (>= 4.0.0, < 4.5.0)
+    dotenv (2.2.2)
+    dotenv-rails (2.2.2)
+      dotenv (= 2.2.2)
+      railties (>= 3.2, < 6.0)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.23)
@@ -207,6 +211,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-token_authenticatable
+  dotenv-rails
   graphiql-rails
   graphql (~> 1.7.1)
   jbuilder (~> 2.5)

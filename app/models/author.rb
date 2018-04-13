@@ -6,4 +6,6 @@ class Author < ApplicationRecord
          :token_authenticatable
   has_many :articles
   validates :name, presence: true
+
+  before_save :ensure_authentication_token
 end

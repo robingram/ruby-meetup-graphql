@@ -180,19 +180,54 @@ Add devise:
 Alter Author to add devise modules.
 Install and set up `devise-token_authenticatable`.
 Define an input type for the user details.
+Add mutation for registering a user
+  - Note conversion of camel case arguments to snake case
+Add to mutation type.
 
+Sign up query:
 
+  mutation {
+    signUp(registrationDetails: {
+      name: "Rob Ingram",
+      email: "rob@headcrash.org",
+      password: "secret"
+    }) {
+      name
+    }
+  }
+
+Sign in:
+
+Authentication return type.
+Sign-in mutation.
+
+  mutation {
+    signIn(email: "rob@headcrash.org", password: "secret") {
+      authenticationToken
+    }
+  }
+
+Authorization
+
+Add `current_author` to GraphQL context.
+Check for current user before executing mutation.
 
 ## Further Reading
 
-Authentication with Devise:
-https://chunksofco.de/rails-graphql-server-tips-part-1-authentication-bced6cf7ac63
 
 Authentication with JWT:
 https://blog.codeship.com/how-to-implement-a-graphql-api-in-rails/
 
 Authorisation with Pundit
 https://medium.com/@NickPoorman/graphql-ruby-and-authorization-with-pundit-3d8d2102533d
+
+
+## Credits
+
+
+
+Authentication with Devise:
+https://chunksofco.de/rails-graphql-server-tips-part-1-authentication-bced6cf7ac63
 
 Testing?
 Relay?

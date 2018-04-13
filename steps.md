@@ -173,6 +173,16 @@ Allow article creation.
     }
 
 
+## 9
+
+Add devise:
+
+Alter Author to add devise modules.
+Install and set up `devise-token_authenticatable`.
+Define an input type for the user details.
+
+
+
 ## Further Reading
 
 Authentication with Devise:

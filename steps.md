@@ -214,6 +214,7 @@ Check for current user before executing mutation.
 
 ## Further Reading
 
+https://www.howtographql.com/
 
 Authentication with JWT:
 https://blog.codeship.com/how-to-implement-a-graphql-api-in-rails/
